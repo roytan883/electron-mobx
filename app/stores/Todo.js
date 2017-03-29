@@ -2,8 +2,7 @@
  * Created by eatong on 17-3-13.
  */
 import {observable, action, computed, toJS} from 'mobx';
-import {remote} from 'electron';
-const {todo} = remote.require('./services');
+import {todo} from '../services';
 
 class Todo {
   @observable items = [];
