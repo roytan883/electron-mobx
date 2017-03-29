@@ -10,10 +10,8 @@ directories:
 
 files:
   - package.json
-  - index.js
   - dist/
-  - app/
-  - node_modules/
+  - run/
 
 dmg:
   contents:

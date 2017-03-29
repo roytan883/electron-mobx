@@ -6,11 +6,12 @@
     "name": "eaTong",
     "email": "eatongchou@gmail.com"
   },
+  "main": "run/main.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development electron ./app/main",
-    "build": "run-s dist build-all",
+    "start": "cross-env NODE_ENV=development electron ./run/main",
     "dist": "cross-env NODE_ENV=production webpack  --config webpack.production.config.js",
-    "build-win": "build --win"
+    "build-win": "build --win",
+    "pack-win": "npm run dist && npm run build-win"
   },
   "keywords": [
     "electron",
