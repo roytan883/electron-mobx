@@ -7,16 +7,24 @@ import {AppContainer} from 'react-hot-loader'
 import './styles/app.css';
 import App from './App';
 
-render(
-  <AppContainer>
-    <App />
-  </AppContainer>,
-  document.getElementById('root')
-);
+const nodeEnv = process.env.NODE_ENV;
 
-if (module.hot) {
-  module.hot.accept('./App', () => {
-    const NextRootContainer = require('./App').default;
-    render(<NextRootContainer />, document.getElementById('root'));
-  })
+if (nodeEnv === 'development') {
+  render(
+    <AppContainer>
+      <App />
+    </AppContainer>,
+    document.getElementById('root')
+  );
+  if (module.hot) {
+    module.hot.accept('./App', () => {
+      const NextRootContainer = require('./App').default;
+      return(<NextRootContainer />, document.getElementById('root'));
+    })
+  }
+} else {
+  render(
+    <App />,
+    document.getElementById('root')
+  );
 }
