@@ -5,8 +5,14 @@ Maybe this is the most lightweight starter for `electron` & `MobX`.
 
 ### how to start development
 
-Just cd to this directory and run `npm start`.
+Just cd to this directory and run 
+```
+npm start
+```
 
 ### hot to build 
 
-Simple run `npm run build` as start.
+```
+npm run dist
+npm run build-win
+```
